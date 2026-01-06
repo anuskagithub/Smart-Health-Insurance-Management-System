@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Visual Studio/Rider files
+.vs/
+*.suo
+*.user
+*.sln.user
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS-specific files (macOS)
+.DS_Store

@@ -1,0 +1,35 @@
+<h2 mat-dialog-title class="dialog-title">
+  Treatment History Submission
+</h2>
+
+<mat-dialog-content class="dialog-content">
+
+  <form [formGroup]="planForm" class="plan-form">
+
+    <!-- PLAN NAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Treatment History</mat-label>
+      <textarea matInput formControlName="treatmentHistory"></textarea>
+      <mat-error *ngIf="planForm.get('treatmentHistory')?.hasError('required')">
+        Treatment History is required
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="primary" (click)="cancel()">
+    Cancel
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="primary-action"
+    (click)="save()"
+    [disabled]="planForm.invalid">
+    Submit Treatment
+  </button>
+</mat-dialog-actions>

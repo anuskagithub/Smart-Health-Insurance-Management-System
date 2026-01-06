@@ -1,0 +1,19 @@
+<h2>Available Insurance Plans</h2>
+
+<div *ngIf="loading">Loading plans...</div>
+
+<div class="plans-grid" *ngIf="!loading">
+  <div class="plan-card" *ngFor="let plan of plans">
+
+    <h3>{{ plan.planName }}</h3>
+    <p><strong>Type:</strong> {{ plan.planType }}</p>
+    <p><strong>Coverage:</strong> ₹{{ plan.coverageAmount }}</p>
+    <p><strong>Premium:</strong> ₹{{ plan.premiumAmount }}</p>
+    <p><strong>Duration:</strong> {{ plan.durationInMonths }} months</p>
+
+    <button (click)="buy(plan.insurancePlanId)">
+      Buy Plan
+    </button>
+
+  </div>
+</div>

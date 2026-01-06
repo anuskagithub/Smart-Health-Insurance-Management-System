@@ -1,0 +1,51 @@
+<h2>{{ isEdit ? 'Edit Claims Officer' : 'Add Claims Officer' }}</h2>
+
+<form [formGroup]="form">
+
+    <div *ngIf="!isEdit">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Password" formControlName="password">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Full Name" formControlName="fullName">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input type="date" matInput placeholder="Date of Birth" formControlName="dateOfBirth">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Employee Code" formControlName="employeeCode">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Department" formControlName="department">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Address" formControlName="address">
+    </mat-form-field>
+
+    <div class="button-row">
+        <button mat-raised-button color="primary" (click)="save()">
+            {{ isEdit ? 'Update' : 'Create' }}
+        </button>
+
+        <button mat-button (click)="close()">Cancel</button>
+    </div>
+
+</form>

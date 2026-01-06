@@ -1,0 +1,70 @@
+<h2 mat-dialog-title class="dialog-title">
+  {{ isEdit ? 'Edit Plan' : 'Create Plan' }}
+</h2>
+
+<mat-dialog-content class="dialog-content">
+
+  <form [formGroup]="planForm" class="plan-form">
+
+    <!-- PLAN NAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Plan Name</mat-label>
+      <input matInput formControlName="planName" />
+      <mat-error *ngIf="planForm.get('planName')?.hasError('required')">
+        Plan name is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- PLAN TYPE (FULL WIDTH – FIXES OVERLAP) -->
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Plan Type</mat-label>
+  <mat-select
+    formControlName="planType"
+    disableOptionCentering
+    panelPosition="below">
+    <mat-option value="Individual">Individual</mat-option>
+    <mat-option value="Family">Family</mat-option>
+    <mat-option value="Senior">Senior</mat-option>
+  </mat-select>
+
+  <mat-error *ngIf="planForm.get('planType')?.hasError('required')">
+    Plan type is required
+  </mat-error>
+</mat-form-field>
+
+    <!-- PREMIUM -->
+    <mat-form-field appearance="outline">
+      <mat-label>Premium Amount</mat-label>
+      <input matInput type="number" formControlName="premiumAmount" />
+    </mat-form-field>
+
+    <!-- COVERAGE -->
+    <mat-form-field appearance="outline">
+      <mat-label>Coverage Amount</mat-label>
+      <input matInput type="number" formControlName="coverageAmount" />
+    </mat-form-field>
+
+    <!-- DURATION -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Duration (Months)</mat-label>
+      <input matInput type="number" formControlName="durationInMonths" />
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="primary" (click)="cancel()">
+    Cancel
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="primary-action"
+    (click)="save()"
+    [disabled]="planForm.invalid">
+    {{ isEdit ? 'Update' : 'Create' }}
+  </button>
+</mat-dialog-actions>

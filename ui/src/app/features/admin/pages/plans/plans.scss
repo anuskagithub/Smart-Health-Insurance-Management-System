@@ -1,0 +1,175 @@
+/* =========================================================
+   PAGE BACKGROUND (SAME AS USER APPROVAL)
+========================================================= */
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 24px;
+  background: #eef1f5;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER CARD (SEPARATE – KEY DIFFERENCE)
+========================================================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 24px;
+  background: #f1f4f8;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+  }
+
+  button {
+    height: 40px;
+    padding: 0 18px;
+    background: #e6ebf2;
+    border: 1px solid #cfd8e3;
+    color: #1f2937;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+}
+
+/* =========================================================
+   TABLE CARD (SEPARATE)
+========================================================= */
+.plans-card {
+  background: #f7f9fc;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+}
+
+/* =========================================================
+   FILTER
+========================================================= */
+.filter {
+  width: 320px;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   TABLE (IDENTICAL STYLING)
+========================================================= */
+table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  background: #e9eef5;
+  font-weight: 700;
+  color: #374151;
+  padding: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 16px 14px;
+  font-weight: 500;
+  color: #111827;
+  border-bottom: 1px solid #dbe2ea;
+  font-size: 14px;
+}
+
+tr.mat-row {
+  transition: background-color 0.15s ease;
+}
+
+tr.mat-row:hover {
+  background-color: #edf1f7;
+}
+
+/* =========================================================
+   DISABLED ROW
+========================================================= */
+.row-disabled {
+  opacity: 0.55;
+  background-color: #f1f5f9;
+  filter: grayscale(0.6);
+}
+
+/* =========================================================
+   TOGGLE (NEUTRAL, SAME AS USER APPROVAL PHILOSOPHY)
+========================================================= */
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+::ng-deep .status-toggle {
+  transform: scale(1.05);
+}
+
+::ng-deep .status-toggle .mat-slide-toggle-bar {
+  height: 14px;
+  width: 36px;
+  background-color: #cbd5e1;
+  border-radius: 999px;
+}
+
+::ng-deep .status-toggle .mat-slide-toggle-thumb {
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+::ng-deep .status-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #94a3b8;
+}
+
+::ng-deep .status-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #f8fafc;
+}
+
+/* =========================================================
+   STATUS TEXT
+========================================================= */
+.status-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-text.active {
+  color: #1f2937;
+}
+
+.status-text.disabled {
+  color: #6b7280;
+}
+
+/* =========================================================
+   ACTION ICONS
+========================================================= */
+button[mat-icon-button] {
+  transition: background-color 0.15s ease;
+}
+
+button[mat-icon-button]:hover {
+  background-color: #e5e7eb;
+}
+
+/* =========================================================
+   PAGINATOR
+========================================================= */
+mat-paginator {
+  background: #f7f9fc;
+  border-top: 1px solid #dbe2ea;
+  margin-top: 8px;
+}

@@ -1,0 +1,130 @@
+<mat-card class="plans-card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>Insurance Plans</h2>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addPlan()">
+      <mat-icon>add</mat-icon>
+      Create Plan
+    </button>
+  </div>
+
+  <!-- SEARCH / FILTER -->
+  <mat-form-field
+    appearance="outline"
+    class="filter">
+    <mat-label>Search plans</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Name, type, premium…" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <!-- TABLE -->
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z3">
+
+    <!-- PLAN NAME -->
+    <ng-container matColumnDef="planName">
+      <th mat-header-cell *matHeaderCellDef>Plan</th>
+      <td mat-cell *matCellDef="let plan">
+        {{ plan.planName }}
+      </td>
+    </ng-container>
+
+    <!-- PLAN TYPE -->
+    <ng-container matColumnDef="planType">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let plan">
+        {{ plan.planType }}
+      </td>
+    </ng-container>
+
+    <!-- PREMIUM -->
+    <ng-container matColumnDef="premiumAmount">
+      <th mat-header-cell *matHeaderCellDef>Premium</th>
+      <td mat-cell *matCellDef="let plan">
+        ₹{{ plan.premiumAmount }}
+      </td>
+    </ng-container>
+
+    <!-- COVERAGE -->
+    <ng-container matColumnDef="coverageAmount">
+      <th mat-header-cell *matHeaderCellDef>Coverage</th>
+      <td mat-cell *matCellDef="let plan">
+        ₹{{ plan.coverageAmount }}
+      </td>
+    </ng-container>
+
+    <!-- DURATION -->
+    <ng-container matColumnDef="durationInMonths">
+      <th mat-header-cell *matHeaderCellDef>Duration</th>
+      <td mat-cell *matCellDef="let plan">
+        {{ plan.durationInMonths }} months
+      </td>
+    </ng-container>
+
+    <!-- STATUS TOGGLE -->
+<ng-container matColumnDef="status">
+  <th mat-header-cell *matHeaderCellDef>Status</th>
+  <td mat-cell *matCellDef="let plan">
+
+    <div class="toggle-wrapper">
+      <mat-slide-toggle
+  class="status-toggle"
+  [checked]="plan.isActive"
+  (change)="toggleStatus(plan, $event.checked)">
+</mat-slide-toggle>
+
+<span
+  class="status-text"
+  [class.active]="plan.isActive"
+  [class.disabled]="!plan.isActive">
+  {{ plan.isActive ? 'Active' : 'Disabled' }}
+</span>
+    </div>
+
+  </td>
+</ng-container>
+
+    <!-- ACTIONS -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let plan">
+
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="editPlan(plan)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+      </td>
+    </ng-container>
+
+    <!-- ROWS -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      [class.row-disabled]="!row.isActive">
+    </tr>
+
+  </table>
+
+  <!-- PAGINATOR -->
+  <mat-paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons>
+  </mat-paginator>
+
+</mat-card>

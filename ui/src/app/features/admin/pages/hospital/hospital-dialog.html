@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>
+  {{ isEdit ? 'Edit Hospital' : 'Add Hospital' }}
+</h2>
+
+<form [formGroup]="form">
+
+  <!-- Only for CREATE -->
+  <div *ngIf="!isEdit">
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="text" formControlName="phoneNumber">
+    </mat-form-field>
+
+  </div> <!-- ✅ MISSING CLOSING DIV FIXED -->
+
+  <!-- Common fields (Create + Edit) -->
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Provider Name</mat-label>
+    <input matInput formControlName="providerName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Provider Type</mat-label>
+    <input matInput formControlName="providerType">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city">
+  </mat-form-field>
+
+  <mat-checkbox formControlName="isNetworkProvider">
+    Network Provider
+  </mat-checkbox>
+
+  <div class="actions">
+    <button mat-button type="button" (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" type="button" (click)="save()">
+      {{ isEdit ? 'Update' : 'Create' }}
+    </button>
+  </div>
+
+</form>

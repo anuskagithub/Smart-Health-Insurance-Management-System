@@ -1,0 +1,32 @@
+<mat-sidenav-container class="admin-wrapper">
+
+  <!-- SIDEBAR -->
+  <mat-sidenav
+    mode="side"
+    opened
+    class="admin-sidenav">
+
+    <!-- NAVIGATION -->
+    <app-admin-sidebar></app-admin-sidebar>
+
+    <!-- LOGOUT (BOTTOM) -->
+    <div class="sidebar-footer">
+      <button
+        mat-stroked-button
+        color="warn"
+        class="logout-btn"
+        (click)="logout()">
+
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </div>
+
+  </mat-sidenav>
+
+  <!-- CONTENT -->
+  <mat-sidenav-content class="admin-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

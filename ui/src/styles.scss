@@ -1,0 +1,104 @@
+/* GLOBAL STYLES ONLY — NO MATERIAL SASS */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Force Angular Material to use Material Symbols Rounded */
+mat-icon {
+  font-family: 'Material Symbols Rounded' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+/* NAVBAR */
+.top-nav {
+  height: 72px;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fc;
+}
+
+/* Brand */
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+/* Center links */
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-center a,
+.nav-center button {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Right buttons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Login button */
+.login-btn {
+  border-radius: 24px;
+  padding: 6px 20px;
+}
+
+/* Register button (CTA) */
+.register-btn {
+  border-radius: 24px;
+  padding: 6px 26px;
+  background: linear-gradient(135deg, #4f6ef7, #3f51b5);
+  color: white;
+}
+
+/* Hover polish */
+.mat-button:hover,
+.mat-stroked-button:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+
+body {
+  background: #f6f8fc;
+}
+
+/* ===== GLOBAL FOOTER ===== */
+
+.footer-bottom {
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+  background: #080b14;
+  color: #9aa1b2;
+}
+
+
+/* Material components will still work
+   because Angular Material ships with
+   prebuilt CSS */

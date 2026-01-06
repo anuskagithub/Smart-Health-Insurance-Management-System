@@ -1,0 +1,29 @@
+<h2>Secure Payment Gateway</h2>
+
+<div class="gateway-box">
+  <p><strong>Amount:</strong> ₹{{ amount }}</p>
+
+  <p>Choose Payment Method</p>
+
+  <div class="methods">
+    <label>
+      <input type="radio" name="paymentmethod" checked /> Credit / Debit Card
+    </label>
+    <label>
+      <input type="radio" name="paymentmethod"/> UPI
+    </label>
+    <label>
+      <input type="radio" name="paymentmethod" /> Net Banking
+    </label>
+  </div>
+
+  <button
+    (click)="confirmPayment()"
+    [disabled]="processing">
+    {{ processing ? 'Processing...' : 'Pay Now' }}
+  </button>
+
+  <button class="cancel" (click)="cancel()">
+    Cancel
+  </button>
+</div>

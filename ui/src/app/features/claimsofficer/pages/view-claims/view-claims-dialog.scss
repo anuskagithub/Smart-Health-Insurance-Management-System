@@ -1,0 +1,93 @@
+/* =========================
+   TITLE
+========================= */
+.dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.dialog-content {
+  padding-top: 8px;
+}
+
+/* =========================
+   CLAIM SUMMARY
+========================= */
+.claim-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+
+  span {
+    color: #6b7280;
+    margin-bottom: 2px;
+  }
+
+  strong {
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .status {
+    text-transform: capitalize;
+  }
+}
+
+/* =========================
+   FORM
+========================= */
+.plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* =========================
+   RADIO GROUP
+========================= */
+.status-options {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.full-width {
+  width: 100%;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+.dialog-actions {
+  padding: 12px 24px 20px;
+  gap: 12px;
+}
+
+.primary-action {
+  min-width: 140px;
+}

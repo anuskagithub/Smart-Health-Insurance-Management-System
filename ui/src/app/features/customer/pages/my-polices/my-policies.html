@@ -1,0 +1,26 @@
+<h2>My Policies</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading && policies.length === 0">
+  No policies found.
+</div>
+<div class="plans-grid" *ngIf="!loading">
+  <div *ngFor="let p of policies" class="policy-card">
+    <h3>{{ p.planName }}</h3>
+    <p>Policy No: {{ p.policyNumber }}</p>
+    <p>Status: {{ p.status }}</p>
+    <p>Premium: ₹{{ p.premiumAmount }}</p>
+    <p>Coverage Left: ₹{{ p.coverageRemaining }}</p>
+    <p>Valid Till: {{ p.endDate | date }}</p>
+
+    <button (click)="payPremium(p.policyId)">
+      Pay Premium
+    </button>
+
+    <button (click)="claimPolicy(p.policyId)">
+      Claim Policy
+    </button>
+  </div>
+
+</div>

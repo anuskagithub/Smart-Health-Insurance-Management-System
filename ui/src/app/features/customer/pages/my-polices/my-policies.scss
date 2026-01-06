@@ -1,0 +1,27 @@
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.policy-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.policy-card h3 {
+  margin-bottom: 10px;
+}
+
+.policy-card button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}

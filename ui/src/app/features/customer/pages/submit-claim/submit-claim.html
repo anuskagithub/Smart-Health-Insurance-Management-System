@@ -1,0 +1,36 @@
+<div>Submit Claim</div>
+
+
+<div class="policy-card">
+    <h3>{{ myPolicies.planName }}</h3>
+    <p>Policy No: {{ myPolicies.policyNumber }}</p>
+    <p>Status: {{ myPolicies.status }}</p>
+    <p>Premium: ₹{{ myPolicies.premiumAmount }}</p>
+    <p>Coverage Left: ₹{{ myPolicies.coverageRemaining }}</p>
+    <p>Valid Till: {{ myPolicies.endDate | date }}</p>
+    <form [formGroup]="form">
+
+
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="Select Hospital" formControlName="selectedHospitalProviderId">
+                <mat-option *ngFor="let r of hospitalProviders" [value]="r.hospitalProviderId">
+                    {{ r.providerName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="Claim Amount" formControlName="claimamount">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Remarks" formControlName="remarks">
+        </mat-form-field>
+
+
+
+        <button (click)="claimPolicy(myPolicies.policyId)">
+            Submit Claim
+        </button>
+    </form>
+</div>

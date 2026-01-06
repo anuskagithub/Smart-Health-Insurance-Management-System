@@ -1,0 +1,90 @@
+<h2 mat-dialog-title class="dialog-title">
+  Claims Officer Review
+</h2>
+
+<mat-dialog-content class="dialog-content">
+
+  <!-- CLAIM SUMMARY -->
+  <div class="claim-summary">
+
+    <div class="summary-item">
+      <span>Policy Number</span>
+      <strong>{{ claimDetails.policyNumber }}</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Provider Name</span>
+      <strong>{{ claimDetails.providerName }}</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Claim Amount</span>
+      <strong>₹{{ claimDetails.claimAmount }}</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Status</span>
+      <strong class="status">{{ claimDetails.status }}</strong>
+    </div>
+
+    <div class="summary-item">
+      <span>Submitted On</span>
+      <strong>{{ claimDetails.submittedOn }}</strong>
+    </div>
+
+  </div>
+
+  <!-- REVIEW FORM -->
+  <form [formGroup]="planForm" class="plan-form">
+
+    <p class="section-title">Review Decision</p>
+
+    <mat-radio-group
+      aria-label="Select an option"
+      formControlName="status"
+      class="status-options">
+
+      <mat-radio-button value="approve">
+        Approve
+      </mat-radio-button>
+
+      <mat-radio-button value="reject">
+        Reject
+      </mat-radio-button>
+
+    </mat-radio-group>
+
+    <!-- REMARKS -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Remarks</mat-label>
+      <textarea
+        matInput
+        rows="3"
+        formControlName="remarks">
+      </textarea>
+
+      <mat-error *ngIf="planForm.get('remarks')?.hasError('required')">
+        Remarks is required
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+
+  <button mat-stroked-button color="primary" (click)="cancel()">
+    Cancel
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="primary-action"
+    (click)="save()"
+    [disabled]="planForm.invalid">
+    Submit Review
+  </button>
+
+</mat-dialog-actions>

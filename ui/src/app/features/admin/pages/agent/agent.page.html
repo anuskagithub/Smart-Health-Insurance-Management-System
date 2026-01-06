@@ -1,0 +1,51 @@
+<button mat-raised-button color="primary" (click)="addAgent()">
+  + Add Agent
+</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="agentCode">
+    <th mat-header-cell *matHeaderCellDef> Agent Code </th>
+    <td mat-cell *matCellDef="let a"> {{ a.agentCode }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fullName">
+    <th mat-header-cell *matHeaderCellDef> Full Name </th>
+    <td mat-cell *matCellDef="let a"> {{ a.fullName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="yearsOfExperience">
+    <th mat-header-cell *matHeaderCellDef> Experience (Years) </th>
+    <td mat-cell *matCellDef="let a"> {{ a.yearsOfExperience }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="region">
+    <th mat-header-cell *matHeaderCellDef> Region </th>
+    <td mat-cell *matCellDef="let a"> {{ a.region }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="isActive">
+    <th mat-header-cell *matHeaderCellDef> Active </th>
+    <td mat-cell *matCellDef="let a">
+      {{ a.isActive ? 'Yes' : 'No' }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let a">
+      <button mat-icon-button color="primary" (click)="editAgent(a)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+<mat-paginator [pageSize]="5"></mat-paginator>

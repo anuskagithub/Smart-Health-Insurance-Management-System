@@ -1,0 +1,121 @@
+/* =========================================================
+   DIALOG CONTAINER – COMPACT
+========================================================= */
+.mat-dialog-container {
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.18),
+    0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   TITLE – STRONG BUT SMALL
+========================================================= */
+.dialog-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* =========================================================
+   SECTION – SUBTLE CARD
+========================================================= */
+.section {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 10px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FORM FIELDS – COMPACT HEIGHT
+========================================================= */
+.full {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  font-size: 13px;
+
+  .mat-mdc-form-field-infix {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 44px;
+  }
+
+  input {
+    font-size: 13px;
+    color: #0f172a;
+  }
+
+  mat-label {
+    font-size: 12px;
+    color: #475569;
+  }
+}
+
+/* Reduce outline thickness look */
+mat-form-field.mat-mdc-form-field {
+  --mdc-outlined-text-field-outline-color: #cbd5e1;
+  --mdc-outlined-text-field-hover-outline-color: #2563eb;
+  --mdc-outlined-text-field-focus-outline-color: #2563eb;
+}
+
+/* =========================================================
+   CHECKBOX – INLINE & CLEAN
+========================================================= */
+.network-toggle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #334155;
+}
+
+/* =========================================================
+   ACTION BUTTONS – COMPACT FOOTER
+========================================================= */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.actions button {
+  min-height: 36px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Primary Button */
+.actions button[mat-raised-button] {
+  min-width: 120px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================================================
+   REMOVE DULLNESS – SUBTLE HOVER
+========================================================= */
+mat-form-field:hover {
+  background: rgba(37, 99, 235, 0.02);
+  border-radius: 8px;
+}

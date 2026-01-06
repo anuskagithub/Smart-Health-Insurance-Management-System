@@ -1,0 +1,212 @@
+<header class="navbar">
+  <!-- LEFT -->
+  <div class="nav-left">
+    <span class="brand">SmartHealth</span>
+
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+
+    </nav>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <button class="btn-login" routerLink="/login" (click)="goToLogin()">Login</button>
+    <button class="btn-register" routerLink="/register" (click)="goToRegister()">Customer Register</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-content">
+      <h1>Health Insurance<br />That Truly Cares</h1>
+
+      <p>
+        Comprehensive coverage, cashless treatment, and fast claims —
+        built to protect you and your family with confidence.
+      </p>
+
+      <div class="hero-actions">
+  
+</div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-visual">
+      <img src="assets/homepg2.webp" alt="Health insurance illustration" />
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section section why-choose-us">
+  <h2>Why Choose Us?</h2>
+
+  <div class="card-grid">
+    <div class="icon-card">
+      <div class="icon-circle blue">
+        <mat-icon class="icon">local_hospital</mat-icon>
+      </div>
+      <h3>Cashless Treatment</h3>
+      <p>Get admitted without worrying about upfront payments.</p>
+    </div>
+
+    <div class="icon-card">
+      <div class="icon-circle green">
+        <mat-icon class="icon">assignment_turned_in</mat-icon>
+      </div>
+      <h3>Fast Claims</h3>
+      <p>Simple, transparent and faster claim settlements.</p>
+    </div>
+
+    <div class="icon-card">
+      <div class="icon-circle purple">
+        <mat-icon class="icon">family_restroom</mat-icon>
+      </div>
+      <h3>Family Protection</h3>
+      <p>Cover your entire family under one affordable plan.</p>
+    </div>
+
+    <div class="icon-card">
+      <div class="icon-circle orange">
+        <mat-icon class="icon">verified_user</mat-icon>
+      </div>
+      <h3>Trusted & Secure</h3>
+      <p>Your health data is always safe and protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="section soft-bg">
+  <h2>Health Insurance Plans</h2>
+  <p class="sub">
+    Simple, transparent plans designed for different life stages.
+  </p>
+
+  <div class="plans-grid">
+    <!-- Individual -->
+    <div class="plan-card">
+      <div class="plan-icon blue">
+        <mat-icon class="icon">person</mat-icon>
+      </div>
+
+      <h3>Individual Health Plan</h3>
+      <p class="plan-desc">
+        Ideal for individuals seeking personal medical coverage.
+      </p>
+
+      <ul>
+        <li>✔ Cashless hospitalization</li>
+        <li>✔ Coverage up to ₹5 Lakhs</li>
+        <li>✔ Quick claim settlement</li>
+      </ul>
+
+    </div>
+
+    <!-- Family (Featured) -->
+    <div class="plan-card featured">
+      <span class="badge">Most Popular</span>
+
+      <div class="plan-icon green">
+        <mat-icon class="icon">family_restroom</mat-icon>
+      </div>
+
+      <h3>Family Floater Plan</h3>
+      <p class="plan-desc">
+        One comprehensive plan covering your entire family.
+      </p>
+
+      <ul>
+        <li>✔ Single sum insured</li>
+        <li>✔ Coverage up to ₹10 Lakhs</li>
+        <li>✔ Maternity & child care</li>
+      </ul>
+
+    </div>
+
+    <!-- Senior -->
+    <div class="plan-card">
+      <div class="plan-icon orange">
+        <mat-icon class="icon">elderly</mat-icon>
+      </div>
+
+      <h3>Senior Citizen Plan</h3>
+      <p class="plan-desc">
+        Specially designed coverage for senior citizens.
+      </p>
+
+      <ul>
+        <li>✔ Age-specific benefits</li>
+        <li>✔ Pre-existing coverage</li>
+        <li>✔ Dedicated support</li>
+      </ul>
+
+      
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-it-works">
+  <h2>How It Works</h2>
+  <p class="sub">
+    Getting health insurance with us is simple and stress-free.
+  </p>
+
+  <div class="steps-wrapper">
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-icon blue">
+        <mat-icon class="icon">search</mat-icon>
+      </div>
+      <h3>Choose a Plan</h3>
+      <p>
+        Browse our health insurance plans and select the one that
+        fits your needs.
+      </p>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-icon purple">
+        <mat-icon class="icon">person_add</mat-icon>
+      </div>
+      <h3>Register & Apply</h3>
+      <p>
+        Fill in your basic details and submit your application online.
+      </p>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <div class="step-icon green">
+        <mat-icon class="icon">health_and_safety</mat-icon>
+      </div>
+      <h3>Get Covered</h3>
+      <p>
+        Complete verification and enjoy health coverage with peace of mind.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="app-footer">
+  <div class="footer-bottom">
+    © 2026 SmartHealth. All rights reserved.
+  </div>
+</footer>
+
+

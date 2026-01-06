@@ -1,0 +1,45 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <h2>Login</h2>
+    <p class="subtitle">Select your role and access your dashboard</p>
+
+    <!-- ROLE SELECTION -->
+    <div class="role-section">
+
+      <label class="role-option">
+        <input type="radio" name="role" value="Admin" [(ngModel)]="selectedRole">
+        <span>Admin</span>
+      </label>
+
+      <label class="role-option">
+        <input type="radio" name="role" value="Customer" [(ngModel)]="selectedRole">
+        <span>Customer</span>
+      </label>
+
+      <label class="role-option">
+        <input type="radio" name="role" value="Agent" [(ngModel)]="selectedRole">
+        <span>Agent</span>
+      </label>
+
+      <label class="role-option">
+        <input type="radio" name="role" value="ClaimsOfficer" [(ngModel)]="selectedRole">
+        <span>Claims Officer</span>
+      </label>
+
+      <label class="role-option">
+        <input type="radio" name="role" value="HospitalProvider" [(ngModel)]="selectedRole">
+        <span>Hospital Administrator</span>
+      </label>
+
+    </div>
+
+    <input type="text" placeholder="Username" [(ngModel)]="username" />
+    <input type="password" placeholder="Password" [(ngModel)]="password" />
+
+    <button class="login-btn" (click)="login()">Login</button>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+  </div>
+</div>

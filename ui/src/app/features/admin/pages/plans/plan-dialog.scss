@@ -1,0 +1,213 @@
+/* =========================================================
+   PAGE (REDUCED WHITE)
+========================================================= */
+
+.user-approval-page {
+  padding: 28px;
+  background: #eef1f5; /* neutral grey */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #f1f4f8; /* soft surface */
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+  }
+
+  p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  button {
+    height: 40px;
+    padding: 0 18px;
+    background: #e6ebf2;
+    border: 1px solid #cfd8e3;
+    color: #1f2937;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+  background: #f7f9fc; /* off-white */
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+
+  /* dropdown space */
+  padding-bottom: 90px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  background: #e9eef5;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px;
+  text-transform: uppercase;
+}
+
+td.mat-cell {
+  padding: 16px 14px;
+  font-size: 14px;
+  color: #111827;
+  border-bottom: 1px solid #dbe2ea;
+}
+
+tr.mat-row:hover {
+  background: #edf1f7;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status.pending {
+  background: #fbd5d5;
+  color: #9b1c1c;
+}
+
+.status.approved {
+  background: #c7eed8;
+  color: #166534;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.assign-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  mat-form-field {
+    width: 170px;
+  }
+}
+
+/* APPROVE */
+button[color="primary"] {
+  background: #dde3f8;
+  color: #2f3a8f;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* ASSIGN */
+button[color="accent"] {
+  background: #dff4f5;
+  color: #155e75;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* DISABLED */
+button[disabled] {
+  background: #e5e7eb !important;
+  color: #9ca3af !important;
+  border: 1px solid #d1d5db;
+}
+
+/* LOCKED */
+.locked {
+  background: #e7ebf1;
+  color: #475569;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   MAT-SELECT OVERLAY FIX
+========================================================= */
+
+::ng-deep .cdk-overlay-connected-position-bounding-box {
+  overflow: visible !important;
+}
+
+::ng-deep .mat-select-panel {
+  margin: 6px 0;
+  border-radius: 10px;
+  background: #f7f9fc;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  max-height: 280px !important;
+}
+
+::ng-deep .mat-option {
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
+::ng-deep .mat-option:hover {
+  background: #e9eef5;
+}
+
+/* =========================================================
+   PAGINATOR
+========================================================= */
+
+mat-paginator {
+  background: #f1f4f8;
+  border-top: 1px solid #dbe2ea;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .assign-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,76 @@
+.sidebar {
+  width: 260px;                 /* slightly wider */
+  height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #ffffff;
+  padding-top: 24px;
+  box-sizing: border-box;
+}
+
+/* ================= HEADER ================= */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 24px;
+  margin-bottom: 12px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  mat-icon {
+    font-size: 28px;
+    color: #38bdf8;
+  }
+}
+
+/* ================= NAV LIST ================= */
+
+mat-nav-list {
+  padding: 8px 0;
+}
+
+/* ================= NAV ITEMS ================= */
+
+a[mat-list-item] {
+  height: 52px;                 /* increased row height */
+  margin: 6px 12px;             /* vertical + horizontal spacing */
+  padding: 0 16px;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #cbd5f5;
+
+  mat-icon {
+    margin-right: 14px;
+    font-size: 22px;
+    color: #94a3b8;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ================= ACTIVE STATE ================= */
+
+a.active {
+  background: rgba(56, 189, 248, 0.18);
+  color: #ffffff;
+
+  mat-icon {
+    color: #38bdf8;
+  }
+}
+
+/* ================= OPTIONAL: VISUAL SEPARATION ================= */
+
+/* Adds subtle breathing space after every item */
+a[mat-list-item] + a[mat-list-item] {
+  margin-top: 8px;
+}

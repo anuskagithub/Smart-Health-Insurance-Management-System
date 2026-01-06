@@ -1,0 +1,679 @@
+.hero {
+  background: linear-gradient(135deg, #4d516b, #1a237e);
+  color: white;
+
+  min-height: 46vh;       /* reduced */
+  max-height: 52vh;       /* reduced */
+
+  padding: 50px 50px 50px; /* more top padding */
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* GRID LAYOUT */
+.hero-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 64px;
+}
+
+/* LEFT CONTENT */
+.hero-content {
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: 34px;     /* was 42px */
+  line-height: 1.25;
+  margin-bottom: 14px;
+  font-weight: 600;    /* calmer */
+}
+
+.hero p {
+  font-size: 15px;     /* was 16px */
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 520px;
+}
+
+/* BUTTONS */
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+}
+
+/* RIGHT IMAGE */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transform: translateY(10px); /* slight lift */
+}
+
+.hero-visual img {
+  max-width: 500px;   /* reduced */
+  width: 100%;
+  height: auto;
+  z-index: 1;
+
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.25));
+}
+
+/* SOFT GLOW BEHIND IMAGE */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+   ========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    max-height: none;
+    padding: 48px 24px 56px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    margin-top: 36px;
+  }
+
+  .hero-visual img {
+    max-width: 300px;
+  }
+}
+
+/* BUTTONS */
+/* Shared pill buttons (same as navbar) */
+.btn-pill {
+  height: 40px;
+  padding: 0 22px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-pill-primary {
+  background: linear-gradient(135deg, #5b6ef5, #3f51b5);
+  color: #ffffff;
+  border: none;
+
+  box-shadow: 0 6px 16px rgba(63, 81, 181, 0.35);
+}
+
+.btn-pill-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(63, 81, 181, 0.45);
+}
+
+.btn-pill-outline {
+  background: transparent;
+  color: #ffffff;
+
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-pill-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.soft-bg {
+  background: linear-gradient(
+    180deg,
+    #f0f3fa 0%,
+    #ffffff 100%);
+  padding: 15px 15px;
+  border-radius: 24px;
+}
+
+.section-band {
+  background: #eef2ff;
+  padding: 90px 40px;
+  border-radius: 40px;
+}
+
+/* PLANS */
+.plans-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+}
+
+/* Plan Card */
+.plan-card {
+  background: white;
+  padding: 40px 28px;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.15);
+}
+
+/* Featured plan */
+.plan-card.featured {
+  border: 2px solid #3f51b5;
+  transform: scale(1.04);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3f51b5;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Icons */
+.plan-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+/* Normalize Material icon rendering */
+.plan-icon mat-icon,
+.plan-icon .icon {
+  font-size: 34px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  width: 34px;
+  color: #fff;
+}
+
+/* Background gradients */
+.plan-icon.blue {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.plan-icon.green {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+}
+
+.plan-icon.orange {
+  background: linear-gradient(135deg, #ffa726, #f57c00);
+}
+
+
+/* Text */
+.plan-desc {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 18px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.plan-card li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ICON CARDS */
+.card-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.icon-card {
+  background: white;
+  padding: 36px 24px;
+  border-radius: 22px;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.icon-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto 16px;
+}
+
+.icon-circle mat-icon {
+  font-size: 34px;
+  color: white;
+}
+
+.icon-circle.blue {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.icon-circle.green {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+}
+
+.icon-circle.purple {
+  background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+}
+
+.icon-circle.orange {
+  background: linear-gradient(135deg, #ffa726, #f57c00);
+}
+
+/* TABS */
+.plans-tabs {
+  margin-top: 40px;
+}
+
+.tab-card {
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  margin: 24px auto;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* STEPS */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.step-card {
+  background: white;
+  padding: 28px;
+  width: 160px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-card mat-icon {
+  font-size: 36px;
+  color: #3f51b5;
+  margin-bottom: 8px;
+}
+
+/* CTA */
+.cta {
+  margin-top: 100px;
+  background: linear-gradient(135deg, #3f51b5, #283593);
+  color: white;
+  padding: 90px 40px;
+  border-radius: 28px;
+}
+
+/* WHY CHOOSE US ICONS */
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+/* Normalize Material icon rendering */
+.benefit-icon .icon {
+  font-size: 30px;
+  line-height: 1;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Color variants */
+.benefit-icon.blue {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.benefit-icon.green {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+}
+
+.benefit-icon.purple {
+  background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+}
+
+.benefit-icon.orange {
+  background: linear-gradient(135deg, #ffa726, #f57c00);
+}
+
+mat-icon {
+  font-family: 'Material Symbols Rounded' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  direction: ltr;
+
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+  background: linear-gradient(
+    180deg,
+    #f5f7fb 0%,
+    #ffffff 100%
+  );
+  padding: 15px 15px;
+  border-radius: 28px;
+}
+
+.steps-wrapper {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Step card */
+.step-card {
+  background: white;
+  width: 280px;
+  padding: 36px 28px;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Step number badge */
+.step-number {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3f51b5;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon */
+.step-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 20px auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon .icon {
+  font-size: 34px;
+  color: white;
+}
+
+/* Icon colors */
+.step-icon.blue {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.step-icon.purple {
+  background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+}
+
+.step-icon.green {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+}
+
+/* Connector line */
+.step-connector {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 81, 181, 0.2),
+    rgba(63, 81, 181, 0.6)
+  );
+}
+
+/* Text */
+.step-card h3 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+}
+
+.step-card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* NAVBAR BASE */
+.navbar {
+  height: 72px;
+  padding: 0 48px;
+  background: #f8f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* BRAND */
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3f51b5;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a,
+.nav-links span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+  color: #3f51b5;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #3f51b5;
+  border-radius: 2px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background: white;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.dropdown-menu a:hover {
+  background: #f4f6fb;
+  color: #3f51b5;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* LOGIN BUTTON */
+.btn-login {
+  background: transparent;
+  border: 1.5px solid #3f51b5;
+  color: #3f51b5;
+  padding: 8px 22px;
+  border-radius: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-login:hover {
+  background: rgba(63, 81, 181, 0.08);
+}
+
+/* REGISTER BUTTON (CTA) */
+.btn-register {
+  background: linear-gradient(135deg, #4f6ef7, #3f51b5);
+  border: none;
+  color: white;
+  padding: 9px 26px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(63, 81, 181, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(63, 81, 181, 0.45);
+}

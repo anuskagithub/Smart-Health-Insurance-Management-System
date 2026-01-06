@@ -1,0 +1,30 @@
+<h2>Customer Dashboard</h2>
+
+<div class="plans-grid">
+  <div class="plan-card">
+    <h3>Policy Category</h3>
+    <canvas baseChart [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+    </canvas>
+  </div>
+
+  <div class="plan-card">
+    <h3>Premium vs Payout</h3>
+    <canvas baseChart [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+    </canvas>
+  </div>
+
+  
+</div>
+
+<div class="plans-grid-1">
+  <div class="plan-card">
+    <h3>Premium vs Payout</h3>
+    <canvas
+    baseChart
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [type]="barChartType"
+  >
+  </canvas>
+  </div>
+</div>

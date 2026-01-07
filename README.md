@@ -66,12 +66,7 @@ The Health Insurance Management System supports the following user roles, each w
 - **Swagger** – API documentation and testing
 - **Git & GitHub** – Version control and source code management
 
-
-### DEFAULT ADMIN CREDENTIALS
-- Username: admin
-- Password: Admin@123
-
-(Pre-seeded during database initialization)
+----
 
 
 ## SetUp Instructions
@@ -91,11 +86,20 @@ Open the .sln file using Visual Studio or open the folder in VS Code.
 Open the appsettings.json file in the ASP.NET Core Web API project and verify the following
 configurations. 
 
-"JwtSettings": { "Issuer": "HealthInsuranceApi", "Audience": "HealthInsuranceApiUsers", "SecretKey": "THIS_IS_A_VERY_SECURE_SECRET_KEY_12345", "TokenExpiryMinutes": 60
-}"ConnectionStrings": { "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=HealthInsuranceDB10;Trusted_Connection=True;"
-}"Logging": { "LogLevel": { "Default": "Information", "Microsoft.AspNetCore": "Warning"
+```
+
+"JwtSettings": { "Issuer": "HealthInsuranceApi", "Audience": "HealthInsuranceApiUsers", 
+"SecretKey": "THIS_IS_A_VERY_SECURE_SECRET_KEY_12345", 
+"TokenExpiryMinutes": 60
+}"
+ConnectionStrings": { "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=HealthInsuranceDB10;Trusted_Connection=True;"
 }
-},"AllowedHosts": "*"
+
+"Logging": { "LogLevel": { "Default": "Information", "Microsoft.AspNetCore": "Warning"
+}
+},
+AllowedHosts": "*"
+```
 
 
 #### Step 3: Apply Database Migrations

@@ -76,4 +76,48 @@ The Health Insurance Management System supports the following user roles, each w
 (Pre-seeded during database initialization)
 
 
+## SetUp Instructions
+
+### Project Setup Instructions
+This project consists of two independent applications:
+1. Backend: ASP.NET Core Web API
+2. Frontend: Angular Web Application
+
+### Backend Setup (ASP.NET Core Web API)
+
+#### Step 1: Open Backend Solution
+Navigate to the backend project folder
+Open the .sln file using Visual Studio or open the folder in VS Code. 
+
+#### Step 2: Configure Database Connection
+Open the appsettings.json file in the ASP.NET Core Web API project and verify the following
+configurations. 
+
+"JwtSettings": { "Issuer": "HealthInsuranceApi", "Audience": "HealthInsuranceApiUsers", "SecretKey": "THIS_IS_A_VERY_SECURE_SECRET_KEY_12345", "TokenExpiryMinutes": 60
+}"ConnectionStrings": { "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=HealthInsuranceDB10;Trusted_Connection=True;"
+}"Logging": { "LogLevel": { "Default": "Information", "Microsoft.AspNetCore": "Warning"
+}
+},"AllowedHosts": "*"
+
+
+#### Step 3: Apply Database Migrations
+Open Package Manager Console or terminal and run:
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+This will create the database and required tables. 
+
+# NOTE: Kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application. 
+
+#### Step 4: Run Backend API
+Press F5 or run:
+```
+dotnet run
+```
+
+#### Step 5: Verify API
+Open Swagger UI in the browser
+
+
 

@@ -41,32 +41,30 @@ The Health Insurance Management System supports the following user roles, each w
 
 ----
 
-# =====================================================
-# SETUP INSTRUCTIONS
-# =====================================================
 
-# -------------------------------
+### SETUP INSTRUCTIONS
+
+
 # BACKEND SETUP (ASP.NET Core API)
-# -------------------------------
-
 # Step 1: Navigate to backend project directory
 cd backend
 
 # Step 2: Open appsettings.json and verify configuration
-# (No command required – manual verification)
-# Ensure the following values are present:
-#
-# JwtSettings:
-#   Issuer: HealthInsuranceApi
-#   Audience: HealthInsuranceApiUsers
-#   SecretKey: THIS_IS_A_VERY_SECURE_SECRET_KEY_12345
-#   TokenExpiryMinutes: 60
-#
-# ConnectionStrings:
-#   DefaultConnection:
-#   Server=(localdb)\MSSQLLocalDB;
-#   Database=HealthInsuranceDB10;
-#   Trusted_Connection=True;
+ (No command required – manual verification)
+ Ensure the following values are present:
+ ```
+ JwtSettings:
+   Issuer: HealthInsuranceApi
+   Audience: HealthInsuranceApiUsers
+   SecretKey: THIS_IS_A_VERY_SECURE_SECRET_KEY_12345
+    TokenExpiryMinutes: 60
+
+ ConnectionStrings:
+   DefaultConnection:
+   Server=(localdb)\MSSQLLocalDB;
+   Database=HealthInsuranceDB10;
+   Trusted_Connection=True;
+```
 
 # Step 3: Apply Entity Framework migrations
 ```
@@ -74,7 +72,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-### NOTE:
+## NOTE:
 # Before running the application, remove the foreign key
 # FK_CustomerProfiles_AgentProfiles_AgentProfileId
 # from the CustomerProfiles table in the database.

@@ -1,4 +1,4 @@
-## Smart-Health-Insurance-Management-System
+# Smart-Health-Insurance-Management-System
 
 This is end-to-end process flow of the Smart Health Insurance Management System. It explains how different users interact with the system and how data flows from policy creation to claim settlement. The system is designed as a full-stack web application using ASP.NET Core Web API (backend) and Angular (frontend), with secure rolebased access.
 
@@ -100,8 +100,8 @@ ng serve
 
 
 ### DEFAULT ADMIN CREDENTIALS
-Username: admin
-Password: Admin@123
+- Username: admin
+- Password: Admin@123
 (Pre-seeded during database initialization)
 
 

@@ -45,11 +45,11 @@ The Health Insurance Management System supports the following user roles, each w
 ### SETUP INSTRUCTIONS
 
 
-# BACKEND SETUP (ASP.NET Core API)
-# Step 1: Navigate to backend project directory
+### BACKEND SETUP (ASP.NET Core API)
+### Step 1: Navigate to backend project directory
 cd backend
 
-# Step 2: Open appsettings.json and verify configuration
+### Step 2: Open appsettings.json and verify configuration
  (No command required – manual verification)
  Ensure the following values are present:
  ```
@@ -66,26 +66,26 @@ cd backend
    Trusted_Connection=True;
 ```
 
-# Step 3: Apply Entity Framework migrations
+### Step 3: Apply Entity Framework migrations
 ```
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-## NOTE:
-# Before running the application, remove the foreign key
-# FK_CustomerProfiles_AgentProfiles_AgentProfileId
-# from the CustomerProfiles table in the database.
+### NOTE:
+ Before running the application, remove the foreign key
+ FK_CustomerProfiles_AgentProfiles_AgentProfileId
+ from the CustomerProfiles table in the database.
 
-# Step 4: Run the backend API
+### Step 4: Run the backend API
 dotnet run
 
-# Backend will start on a local HTTPS port.
-# Verify using Swagger:
-# https://localhost:<port>/swagger
+ Backend will start on a local HTTPS port.
+ Verify using Swagger:
+ https://localhost:<port>/swagger
 
 
-# -------------------------------
+ -------------------------------
 # FRONTEND SETUP (ANGULAR)
 # -------------------------------
 

@@ -14,13 +14,15 @@
     <p>Coverage Left: ₹{{ p.coverageRemaining }}</p>
     <p>Valid Till: {{ p.endDate | date }}</p>
 
-    <button (click)="payPremium(p.policyId)">
-      Pay Premium
-    </button>
-
     <button (click)="claimPolicy(p.policyId)">
       Claim Policy
     </button>
+    
+    <!--<button (click)="payPremium(p.policyId)">
+      Policy Renewal
+    </button> -->
+
+    
   </div>
 
 </div>

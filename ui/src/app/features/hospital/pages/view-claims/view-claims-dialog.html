@@ -4,12 +4,21 @@
 
 <mat-dialog-content class="dialog-content">
 
+  <p class="dialog-subtitle">
+    Please provide detailed treatment information related to the submitted claim.
+  </p>
+
   <form [formGroup]="planForm" class="plan-form">
 
-    <!-- PLAN NAME -->
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="full-width">
       <mat-label>Treatment History</mat-label>
-      <textarea matInput formControlName="treatmentHistory"></textarea>
+      <textarea
+        matInput
+        formControlName="treatmentHistory"
+        rows="5"
+        placeholder="Enter diagnosis, procedures performed, and relevant notes">
+      </textarea>
+
       <mat-error *ngIf="planForm.get('treatmentHistory')?.hasError('required')">
         Treatment History is required
       </mat-error>

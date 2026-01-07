@@ -1,36 +1,60 @@
-<div>Submit Claim</div>
-
+<div class="page-title">
+  Submit Claim
+</div>
 
 <div class="policy-card">
+  <div class="policy-header">
     <h3>{{ myPolicies.planName }}</h3>
-    <p>Policy No: {{ myPolicies.policyNumber }}</p>
-    <p>Status: {{ myPolicies.status }}</p>
-    <p>Premium: ₹{{ myPolicies.premiumAmount }}</p>
-    <p>Coverage Left: ₹{{ myPolicies.coverageRemaining }}</p>
-    <p>Valid Till: {{ myPolicies.endDate | date }}</p>
-    <form [formGroup]="form">
+    <span class="status-chip">{{ myPolicies.status }}</span>
+  </div>
 
+  <div class="policy-details">
+    <div>
+      <label>Policy No</label>
+      <span>{{ myPolicies.policyNumber }}</span>
+    </div>
+    <div>
+      <label>Premium</label>
+      <span>₹{{ myPolicies.premiumAmount }}</span>
+    </div>
+    <div>
+      <label>Coverage Left</label>
+      <span>₹{{ myPolicies.coverageRemaining }}</span>
+    </div>
+    <div>
+      <label>Valid Till</label>
+      <span>{{ myPolicies.endDate | date }}</span>
+    </div>
+  </div>
 
-        <mat-form-field appearance="outline">
-            <mat-select placeholder="Select Hospital" formControlName="selectedHospitalProviderId">
-                <mat-option *ngFor="let r of hospitalProviders" [value]="r.hospitalProviderId">
-                    {{ r.providerName }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+  <form [formGroup]="form" class="claim-form">
 
-        <mat-form-field class="full-width">
-            <input type="number" matInput placeholder="Claim Amount" formControlName="claimamount">
-        </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select Hospital</mat-label>
+      <mat-select formControlName="selectedHospitalProviderId">
+        <mat-option *ngFor="let r of hospitalProviders"
+                    [value]="r.hospitalProviderId">
+          {{ r.providerName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Remarks" formControlName="remarks">
-        </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Claim Amount</mat-label>
+      <input type="number" matInput formControlName="claimamount">
+    </mat-form-field>
 
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Remarks</mat-label>
+      <input matInput formControlName="remarks">
+    </mat-form-field>
 
+    <div class="action-bar">
+      <button mat-raised-button color="primary"
+              (click)="claimPolicy(myPolicies.policyId)">
+        Submit Claim
+      </button>
+    </div>
 
-        <button (click)="claimPolicy(myPolicies.policyId)">
-            Submit Claim
-        </button>
-    </form>
+  </form>
 </div>

@@ -72,6 +72,7 @@ The Health Insurance Management System supports the following user roles, each w
 ### DEFAULT ADMIN CREDENTIALS
 - Username: admin
 - Password: Admin@123
+
 (Pre-seeded during database initialization)
 
 

@@ -67,8 +67,6 @@ The Health Insurance Management System supports the following user roles, each w
 - **Git & GitHub** – Version control and source code management
 
 
-### NOTE: After migrating the database kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application.
-
 ### DEFAULT ADMIN CREDENTIALS
 - Username: admin
 - Password: Admin@123
@@ -108,7 +106,7 @@ dotnet ef database update
 ```
 This will create the database and required tables. 
 
-# NOTE: Kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application. 
+### NOTE: After migrating the database kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application.
 
 #### Step 4: Run Backend API
 Press F5 or run:
@@ -118,6 +116,30 @@ dotnet run
 
 #### Step 5: Verify API
 Open Swagger UI in the browser
+
+### Frontend Setup (Angular)
+
+## Step 1: Open Frontend Project
+Navigate to the Angular project directory.
+Open in VS Code. 
+
+## Step 2: Install Dependencies
+Run the following command:
+```
+npm install
+```
+
+## Step 3: Run Angular Application
+Start the development server:
+```
+ng serve
+```
+
+### DEFAULT ADMIN CREDENTIALS
+- Username: admin
+- Password: Admin@123
+
+(Pre-seeded during database initialization)
 
 
 

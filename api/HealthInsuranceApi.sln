@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceApi", "HealthInsuranceApi.csproj", "{142E4078-646E-4F1B-A27D-1883261917F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceTestProject", "..\HealthInsuranceTestProject\HealthInsuranceTestProject.csproj", "{CDC00C7E-D54E-4FAB-BC3E-923313DD5201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceTestProject", "..\apitest\HealthInsuranceTestProject.csproj", "{CDC00C7E-D54E-4FAB-BC3E-923313DD5201}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -72,10 +72,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-### NOTE:
- Before running the application, remove the foreign key
- FK_CustomerProfiles_AgentProfiles_AgentProfileId
- from the CustomerProfiles table in the database.
+## NOTE:  Before running the application, remove the foreign key  FK_CustomerProfiles_AgentProfiles_AgentProfileId from the CustomerProfiles table in the database.
 
 ### Step 4: Run the backend API
 dotnet run
@@ -85,29 +82,27 @@ dotnet run
  https://localhost:<port>/swagger
 
 
- -------------------------------
-# FRONTEND SETUP (ANGULAR)
-# -------------------------------
 
-# Step 5: Navigate to frontend project directory
+### FRONTEND SETUP (ANGULAR)
+
+### Step 5: Navigate to frontend project directory
 cd ../frontend
 
-# Step 6: Install project dependencies
+### Step 6: Install project dependencies
 npm install
 
-# Step 7: Run Angular development server
+### Step 7: Run Angular development server
 ng serve
 
-# Frontend will be available at:
-# http://localhost:4200
+### Frontend will be available at:
+ http://localhost:4200
 
 
-# -------------------------------
-# DEFAULT ADMIN CREDENTIALS
-# -------------------------------
-# Username: admin
-# Password: Admin@123
-# (Pre-seeded during database initialization)
+
+### DEFAULT ADMIN CREDENTIALS
+Username: admin
+Password: Admin@123
+(Pre-seeded during database initialization)
 
 
 

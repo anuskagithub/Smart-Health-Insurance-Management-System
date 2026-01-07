@@ -55,13 +55,27 @@ namespace HealthInsuranceApi.Controllers
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await _adminService.GetAllUsersAsync();
-            return Ok(users);
+            try
+            {
+                var users = await _adminService.GetAllUsersAsync();
+                return Ok(users);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPost("users")]
         public async Task<IActionResult> CreateUser(AdminUserCreateDto dto)
         {
+            if (dto == null)
+                return BadRequest();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             await _adminService.CreateUserAsync(dto);
             return Ok(new { message = "User created successfully" });
         }
@@ -118,9 +132,15 @@ namespace HealthInsuranceApi.Controllers
         int planId,
         [FromBody] InsurancePlanUpdateDto dto)
         {
-            await _planService.UpdatePlanAsync(planId, dto);
-            return Ok(new { message = "Insurance plan updated" });
+            try
+            {
+                await _planService.UpdatePlanAsync(planId, dto);
+                return Ok(new { message = "Insurance plan updated" });
+
+            } catch (Exception ex) {return NotFound(); }
         }
+
+
 
         [HttpPatch("plans/{planId}/disable")]
         public async Task<IActionResult> DisablePlan(int planId)

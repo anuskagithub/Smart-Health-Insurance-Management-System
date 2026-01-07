@@ -110,7 +110,7 @@ dotnet ef database update
 ```
 This will create the database and required tables. 
 
-### NOTE: After migrating the database kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application.
+### NOTE: ***After migrating the database kindly remove the foreign key FK_CustomerProfiles_AgentProfiles_AgentProfileId from CustomerProfiles Table in the database before execution of the application.***
 
 #### Step 4: Run Backend API
 Press F5 or run:

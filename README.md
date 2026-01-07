@@ -39,5 +39,77 @@ The Health Insurance Management System supports the following user roles, each w
 - Updates medical and treatment details
 - Supports claim verification process
 
+----
+
+# =====================================================
+# SETUP INSTRUCTIONS
+# =====================================================
+
+# -------------------------------
+# BACKEND SETUP (ASP.NET Core API)
+# -------------------------------
+
+# Step 1: Navigate to backend project directory
+cd backend
+
+# Step 2: Open appsettings.json and verify configuration
+# (No command required – manual verification)
+# Ensure the following values are present:
+#
+# JwtSettings:
+#   Issuer: HealthInsuranceApi
+#   Audience: HealthInsuranceApiUsers
+#   SecretKey: THIS_IS_A_VERY_SECURE_SECRET_KEY_12345
+#   TokenExpiryMinutes: 60
+#
+# ConnectionStrings:
+#   DefaultConnection:
+#   Server=(localdb)\MSSQLLocalDB;
+#   Database=HealthInsuranceDB10;
+#   Trusted_Connection=True;
+
+# Step 3: Apply Entity Framework migrations
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+
+### NOTE:
+# Before running the application, remove the foreign key
+# FK_CustomerProfiles_AgentProfiles_AgentProfileId
+# from the CustomerProfiles table in the database.
+
+# Step 4: Run the backend API
+dotnet run
+
+# Backend will start on a local HTTPS port.
+# Verify using Swagger:
+# https://localhost:<port>/swagger
+
+
+# -------------------------------
+# FRONTEND SETUP (ANGULAR)
+# -------------------------------
+
+# Step 5: Navigate to frontend project directory
+cd ../frontend
+
+# Step 6: Install project dependencies
+npm install
+
+# Step 7: Run Angular development server
+ng serve
+
+# Frontend will be available at:
+# http://localhost:4200
+
+
+# -------------------------------
+# DEFAULT ADMIN CREDENTIALS
+# -------------------------------
+# Username: admin
+# Password: Admin@123
+# (Pre-seeded during database initialization)
+
 
 
